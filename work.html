@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Skelly Designs</title>
+
+    <meta name="viewport" content="width=device-width,intitial-scale=1.0, maximum-scale=1.0">
+    
+    <link rel="stylesheet" href="css/stylesheet.css">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="work.html" class="active">WORK</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+    </nav>
+
+
+
+<section class="blood">
+    <img src="img/bloodsplat.png" width="550px" alt="bloodsplat">
+
+</section>
+<div class="grid">
+<div class="carousel" id="carousel">
+    <a class="carousel-btn previous" onclick="plusSlides (-1, 'carousel')">&#10094</a>
+    <a class="carousel-btn next" onclick="plusSlides (1, 'carousel')">&#10095</a>
+    
+    
+    <div class="Slides">
+        
+        <img src="img/Temp. Of Misinfo. Mockup.jpg" alt="Temptations of Misinformation"> 
+        
+        <img src="img/Boofin clown 2 mockup.jpg" alt="Legal For Some?"> 
+
+        <img src="img/Shroom Shirt Mockup.png" alt="Shroom Shirt"> 
+        
+        
+        <img src="img/Vitruvian wall(Cropped 1_2).jpg" alt="JJC Math Department">
+       
+
+        <img src="img/Prober Board Mockup.png" alt="Prober Board">
+</div>
+</div>
+</div>
+
+<div class=work>
+    <div class="heading"><h3>Temptations of Misinformation</h3></div>
+    <div class="text2"><p>Magazine Spread, Digital Layout (2023) </p></div>
+   
+    <div class="heading"><h3>Legal For Some...</h3></div>
+    <div class="text2"><p> Human Rights Poster, Digital Layout (2024) </p></div>
+    
+    <div class="heading"><h3>Shroom Funk</h3></div>
+    <div class="text2"><p> Shirt Mockup, Portfolio (2024) </p></div>
+
+    <div class="heading"><h3>Vitruvian Wall</h3></div>
+    <div class="text2"><p> Math Department Redesign, Joliet Junior College (2023) </p></div>
+
+    <div class="heading"><h3>Prober</h3></div>
+    <div class="text2"><p> Skateboard Mockup, Portfolio (2024) </p></div>
+
+</div>
+   
+
+
+
+</body>
+
+
+
+
+
+<script>
+
+const slideIndexes = {};
+
+//note '.carousel' use the same class name
+document.querySelectorAll('.carousel').forEach((carousel) => {
+slideIndexes[carousel.id] = 0;
+});
+
+function plusSlides(direction, carouselId) {
+//note that the '.Slides' is needing to match your class name
+const track = document.querySelector(`#${carouselId} .Slides`);
+const slides = track.children;
+const totalSlides = slides.length;
+
+slideIndexes[carouselId] = (slideIndexes[carouselId] + direction + totalSlides) % totalSlides;
+
+const newTransform = `translateX(-${slideIndexes[carouselId] * 100}%)`;
+track.style.transform = newTransform;
+}
+
+</script>
+
+
+</hmtl>
